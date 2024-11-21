@@ -21,5 +21,6 @@ export class HeaderComponent{
 
     onFatch(){
         this.recipeStore.onFatch();
+        console.log("the code",this.recipeStore)
     }
 }

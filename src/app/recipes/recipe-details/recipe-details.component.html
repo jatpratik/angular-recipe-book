@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-xs-12">
-      <img [src]="detailRecipe?.imageUrl" [alt]="detailRecipe?.name" class="img-responsive" style="max-height: 300px;">
+      <img [src]="detailRecipe?.image_url" [alt]="detailRecipe?.recipe_name" class="img-responsive" style="max-height: 300px;">
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <h1>{{detailRecipe?.name}}</h1>
+      <h1>{{detailRecipe?.recipe_name}}</h1>
     </div>
   </div>
   <div class="row">
@@ -26,7 +26,7 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      {{detailRecipe?.desc}}
+      {{detailRecipe?.description}}
     </div>
   </div>
   <div class="row">
@@ -41,4 +41,3 @@
       </ul>
     </div>
   </div>
-  

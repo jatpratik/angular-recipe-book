@@ -12,10 +12,10 @@ export class RecipeItemComponent implements OnInit {
   @Input()  index?:number;
    // @Output() onDetailData=new EventEmitter<Recipe>();
 
-  
- 
+
+
 
   ngOnInit(): void {
-    
+    console.log("item data",this.recipe)
   }
 }

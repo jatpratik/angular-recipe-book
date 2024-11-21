@@ -33,7 +33,7 @@ export class RecipeService{
     //     new ingredients("balu-sahii",1),
     //     new ingredients("chakkiii",5),
     //    ]
-    //     ) 
+    //     )
     //    ];
 
     private recipes:Recipe[]=[];
@@ -43,12 +43,13 @@ export class RecipeService{
        }
 
     getRecipe(){
-        return this.recipes.slice();
+        return this.recipes?.slice();
     }
 
     setRecipe(recipes:Recipe[]){
         this.recipes=recipes;
-        this.onChangeRecipe.next(this.recipes.slice());
+        console.log("the resipe data from service",this.recipes)
+        this.onChangeRecipe.next(this.recipes?.slice());
     }
 
     addShoppingListArray(data?:ingredients[]){
@@ -61,18 +62,18 @@ export class RecipeService{
 
     addRecipe(recipe:Recipe){
         this.recipes.push(recipe)
-        this.onChangeRecipe.next(this.recipes.slice())
+        this.onChangeRecipe.next(this.recipes?.slice())
     }
 
     updateRecipe(index:number,recipe:Recipe){
         this.recipes[index]=recipe;
-        this.onChangeRecipe.next(this.recipes.slice())
+        this.onChangeRecipe.next(this.recipes?.slice())
         console.log("from service recipes",this.recipes)
     }
 
     onDeleteRecipe(index:number){
         this.recipes.splice(index,1);
-        this.onChangeRecipe.next(this.recipes.slice());
+        this.onChangeRecipe.next(this.recipes?.slice());
     }
 
 

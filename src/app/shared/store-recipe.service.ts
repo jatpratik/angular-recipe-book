@@ -18,11 +18,25 @@ export class storeRecipe{
     }
 
     onFatch(){
-        this.http.get<Recipe[]>('https://ng-recipe-book-51844-default-rtdb.firebaseio.com/recipe.json')
+        this.http.get<Recipe[]>(' https://ng-recipe-book-51844-default-rtdb.firebaseio.com/recipe.json')
         .subscribe(
             responseData =>{
-                this.recipeService.setRecipe(responseData)
                 console.log("on fetch",responseData);
+                let array = [];
+
+                // for (let index = 0; index < responseData.length; index++) {
+                //     array.push( responseData[index])
+                    
+                // }
+                for (let prop in responseData) {
+                    console.log(prop + ': ' + responseData[prop]);
+                    array.push(responseData[prop]);
+                }
+
+                responseData.forEach
+
+                console.log("on fetch array",array);
+                this.recipeService.setRecipe(array)
             }
         )
     }
